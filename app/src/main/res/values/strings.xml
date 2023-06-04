@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">aioapp</string>
+    <string name="background_gray">background gray</string>
+    <string name="tdlpanel">tdlpanel</string>
+    <string name="panelwhite">tdlpanelwhite</string>
+    <string name="panel_white" />
+    <string name="hello_button">hello_button</string>
+    <string name="add_list">add_list</string>
+    <string name="todo_sign">todo_sign</string>
+    <string name="back_button">back_button</string>
+    <string name="view_all">view_all</string>
+    <string name="arrow_button">arrow_button</string>
+    <string name="tdl_panel">tdl_panel</string>
+    <string name="back_button1">back_button</string>
+    <string name="hello_button1">hello_button1</string>
+    <string name="todo_text">todo_text</string>
+    <string name="viewall_button">viewall_button</string>
+    <string name="view_all_button">view_all_button</string>
+    <string name="show_more_arrow">show_more_arrow</string>
+    <string name="add_list_button">add_list_button</string>
+    <string name="add_list_button1">add_list_button</string>
+</resources>
