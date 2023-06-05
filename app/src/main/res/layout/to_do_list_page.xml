@@ -92,7 +92,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.907"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/addlist" />
+        app:srcCompat="@drawable/addlist"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

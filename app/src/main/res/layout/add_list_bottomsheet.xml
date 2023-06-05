@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rouned_corners_dialog"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="373dp"
+        android:layout_height="14dp"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="@string/arrowbtn_bottomsheet"
+        android:src="@drawable/arrow1" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/newtask_text"
+        android:src="@drawable/create_new_task_txt" />
+
+    <EditText
+        android:id="@+id/task_name"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginVertical="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/task_name"
+        android:textSize="13sp"
+        android:textColor="#757575" />
+
+    <EditText
+        android:id="@+id/task_location"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/Location"
+        android:textSize="13sp"
+        android:textColor="#757575" />
+
+
+    <EditText
+        android:id="@+id/task_date"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="date"
+        android:text="@string/mm_dd_year"
+        android:textSize="13sp"
+        android:textColor="#757575"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="381dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="10dp">
+
+
+        <ImageButton
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cancel_btn"
+            android:contentDescription="@string/cancel_btn_bottomsheet"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.068"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/add_task_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/addtask_btn"
+            android:contentDescription="@string/add_task_btn_bottomsheet"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.931"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>
