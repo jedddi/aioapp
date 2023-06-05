@@ -14,7 +14,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.GridLayout;
 import android.widget.Toast;
 
-import com.example.aioapp.databinding.ActivityMainBinding;
+//import com.example.aioapp.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
