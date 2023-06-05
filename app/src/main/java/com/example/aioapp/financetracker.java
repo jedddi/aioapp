@@ -6,18 +6,19 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class financetracker extends AppCompatActivity {
+    private Button button1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_financetracker);
 
-        Button button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(v -> openDashboard());
+        button1 = (Button) findViewById(R.id.button1);
+        button1.setOnClickListener(v -> openDashboard());
     }
     public void openDashboard(){
-        Intent intent = new Intent(this, Dashboard.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

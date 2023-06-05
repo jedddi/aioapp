@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/company"
+        android:title="CYBER-6"
+        android:icon="@drawable/company" />
+    <item
+        android:id="@+id/home"
+        android:title="HOME"
+        android:icon="@drawable/home1" />
+    <item
+        android:id="@+id/notification"
+        android:title="NOTIFICATION"
+        android:icon="@drawable/notification" />
+    <item
+        android:id="@+id/settings"
+        android:title="SETTINGS"
+        android:icon="@drawable/mainmenu" />
+</menu>
