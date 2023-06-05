@@ -24,7 +24,9 @@
 
         <activity android:name=".Todolist"/>
         <activity android:name=".Dashboard"/>
-
+        <activity android:name=".financetracker"/>
+        <activity android:name=".Pomodoro" />
+        <activity android:name=".Journal"/>
     </application>
 
 </manifest>

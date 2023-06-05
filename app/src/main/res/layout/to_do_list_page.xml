@@ -33,8 +33,8 @@
         app:layout_constraintTop_toBottomOf="@+id/calendarView"
         app:srcCompat="@drawable/tdlpanel" />
 
-    <ImageView
-        android:id="@+id/imageView3"
+    <ImageButton
+        android:id="@+id/back_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="88dp"
@@ -43,7 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/backbutton" />
+        android:background="@drawable/backbutton"/>
 
     <ImageView
         android:id="@+id/imageView4"
