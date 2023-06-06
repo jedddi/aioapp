@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -26,12 +27,22 @@ public class Todolist extends AppCompatActivity {
     private HorizontalCalendar horizontalCalendar;
     private Button add_list_button1;
     private BottomSheetDialog add_list_bottomsheet;
-
+    private Button backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.to_do_list_page);
+
+        ImageButton backButton = findViewById(R.id.back_button);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent back_Dashboard = new Intent(Todolist.this, Dashboard_activity.class);
+                startActivity(back_Dashboard);
+            }
+        });
+
 
 // Dialog Code
         ImageButton add_list_button1=findViewById(R.id.addlistbtn);
