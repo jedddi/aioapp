@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(v -> openDashboard());
     }
     public void openDashboard(){
-        Intent intent = new Intent(this, Dashboard.class);
+        Intent intent = new Intent(this, Dashboard_activity.class);
         startActivity(intent);
     }
 }

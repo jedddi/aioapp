@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="#1B1B1B"
     android:contentDescription="@string/back_button"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
 
     <devs.mulham.horizontalcalendar.HorizontalCalendarView
         android:id="@+id/calendarView"
@@ -49,14 +50,13 @@
         android:id="@+id/imageView4"
         android:layout_width="97dp"
         android:layout_height="41dp"
-        android:layout_marginTop="12dp"
         android:contentDescription="@string/hello_button1"
         app:layout_constraintBottom_toTopOf="@+id/calendarView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintTop_toBottomOf="@+id/back_button"
+        app:layout_constraintVertical_bias="0.468"
         app:srcCompat="@drawable/hello" />
 
     <ImageView

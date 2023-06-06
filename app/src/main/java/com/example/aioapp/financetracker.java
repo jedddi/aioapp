@@ -18,7 +18,7 @@ public class financetracker extends AppCompatActivity {
         button1.setOnClickListener(v -> openDashboard());
     }
     public void openDashboard(){
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, Dashboard_activity.class);
         startActivity(intent);
     }
 }

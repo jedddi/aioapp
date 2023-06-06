@@ -18,7 +18,7 @@ public class Pomodoro extends AppCompatActivity {
         button2.setOnClickListener(v -> openDashboard());
     }
     public void openDashboard(){
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, Dashboard_activity.class);
         startActivity(intent);
     }
 }
