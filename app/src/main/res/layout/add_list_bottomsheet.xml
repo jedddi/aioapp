@@ -25,35 +25,44 @@
     <EditText
         android:id="@+id/task_name"
         android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginVertical="10dp"
+        android:layout_height="40dp"
+        android:layout_marginVertical="15dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/task_name"
-        android:textSize="13sp"
-        android:textColor="#757575" />
+        android:textSize="12sp"
+        android:textColor="#757575"
+        android:hint="Task"
+        android:background="@drawable/edittext_background"
+        android:padding="10sp"/>
 
     <EditText
         android:id="@+id/task_location"
         android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="10dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="15dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/Location"
-        android:textSize="13sp"
-        android:textColor="#757575" />
+        android:textSize="12sp"
+        android:textColor="#757575"
+        android:background="@drawable/edittext_background"
+        android:hint="Location"
+        android:padding="10sp"/>
 
 
     <EditText
         android:id="@+id/task_date"
         android:layout_width="250dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:ems="10"
         android:inputType="date"
         android:text="@string/mm_dd_year"
-        android:textSize="13sp"
-        android:textColor="#757575"/>
+        android:textSize="12sp"
+        android:textColor="#757575"
+        android:background="@drawable/edittext_background"
+        android:hint="Location"
+        android:padding="10sp"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="381dp"
