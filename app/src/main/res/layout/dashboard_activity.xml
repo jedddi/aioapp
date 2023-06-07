@@ -13,7 +13,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="#d9d9d9"
+        android:background="@drawable/click"
+        android:foregroundTint="@color/black"
+        android:backgroundTint="@color/black"
         app:menu="@menu/bottom_nav_menu" />
 
     <ImageView
@@ -64,6 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
+            android:background="@drawable/click"
             android:layout_marginBottom="10dp"
             android:gravity="center_horizontal">
 
@@ -87,6 +90,7 @@
         <TableRow
             android:layout_width="183dp"
             android:layout_height="99dp"
+            android:background="@drawable/click"
             android:layout_marginTop="10dp"
             android:gravity="center_horizontal">
 
