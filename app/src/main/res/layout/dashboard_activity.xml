@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     android:background="#d9d9d9">
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="#d9d9d9"
+        app:menu="@menu/bottom_nav_menu" />
+
     <ImageView
         android:id="@+id/imageView15"
         android:layout_width="437dp"
@@ -62,14 +72,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
-                android:background="@drawable/todolist_btn" />
+                android:background="@drawable/todolist_btn"
+                android:contentDescription="To-Do List Button" />
 
             <ImageButton
                 android:id="@+id/finance_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:background="@drawable/finance_btn" />
+                android:background="@drawable/finance_btn"
+                android:contentDescription="Finance Button" />
         </TableRow>
 
         <TableRow
@@ -83,16 +95,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
-                android:background="@drawable/pomdoro_btn" />
+                android:background="@drawable/pomdoro_btn"
+                android:contentDescription="Pomodoro Button" />
 
             <ImageButton
                 android:id="@+id/journal_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:background="@drawable/journal_btn" />
+                android:background="@drawable/journal_btn"
+                android:contentDescription="Journal Button" />
         </TableRow>
 
     </TableLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
