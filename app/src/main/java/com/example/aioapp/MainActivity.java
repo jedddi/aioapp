@@ -3,18 +3,18 @@ package com.example.aioapp;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
-import android.widget.Button;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import androidx.appcompat.app.AppCompatActivity;
-
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class MainActivity extends AppCompatActivity {
     private ImageView imageView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,18 +48,50 @@ public class MainActivity extends AppCompatActivity {
         // Start the animation
         animatorSet.start();
 
-
         ConstraintLayout constraintLayout = findViewById(R.id.relativeLayout);
-
         AnimationDrawable animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
         animationDrawable.setEnterFadeDuration(2500);
         animationDrawable.setExitFadeDuration(5000);
         animationDrawable.start();
 
-        Button button = (Button) findViewById(R.id.button);
+        Button button = findViewById(R.id.button);
         button.setOnClickListener(v -> openDashboard());
     }
-    public void openDashboard(){
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.bottom_nav_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+        switch (itemId) {
+            case R.id.company:
+                // Handle "Company" menu item selection
+
+                return true;
+            case R.id.home:
+                // Handle "Home" menu item selection
+                openDashboard();
+                return true;
+            case R.id.notification:
+                // Handle "Notification" menu item selection
+                Intent notificationIntent = new Intent(MainActivity.this, NotificationActivity.class);
+                startActivity(notificationIntent);
+                return true;
+            case R.id.settings:
+                // Handle "Settings" menu item selection
+                Intent settingsIntent = new Intent(MainActivity.this, Settings.class);
+                startActivity(settingsIntent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    public void openDashboard() {
         Intent intent = new Intent(this, Dashboard_activity.class);
         startActivity(intent);
     }
