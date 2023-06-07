@@ -4,54 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary"
+    android:background="#d9d9d9"
     android:orientation="vertical"
+    android:contentDescription="backReturn"
     tools:context=".MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
+        <ImageButton
+            android:id="@+id/returnDash"
+            android:clickable="true"
+            android:background="@drawable/click"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:contentDescription="TODO"
             android:padding="14dp"
-            android:src="@drawable/back_btn" />
+            android:src="@drawable/back_btn"
+            app:tint="@color/black" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/bebas"
             android:text="Settings"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textColor="#000000"
+            android:textSize="30sp" />
     </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">>
+        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/logo1" />
+                android:src="@drawable/logo" />
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:text="AIO"
-                android:textColor="#FFFFFF"
-                android:textSize="22dp"
+                android:layout_marginTop="1dp"
+                android:fontFamily="@font/bebas"
+                android:text="A I O"
+                android:textColor="#000000"
+                android:textSize="50dp"
                 android:textStyle="bold" />
 
             <TextView
@@ -59,7 +67,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="CYBER 6"
-                android:textColor="#CCFFFFFF"
+                android:textStyle="bold"
+                android:textColor="#000000"
                 android:textSize="12sp" />
 
             <LinearLayout
@@ -68,7 +77,8 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
-                android:background="@drawable/round_back_white10_20"
+                android:background="#701d1d1d"
+                android:src="@drawable/round_back_white10_20"
                 android:orientation="vertical"
                 android:padding="15dp">
 
@@ -93,10 +103,11 @@
                         android:layout_marginStart="20dp"
                         android:layout_toEndOf="@+id/messageIcon"
                         android:text="Send Feedback"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#fff"
                         android:textStyle="bold" />
 
                     <ImageView
+                        app:tint="#fff"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -125,7 +136,7 @@
                         android:layout_marginStart="20dp"
                         android:layout_toEndOf="@+id/about_us_Icon"
                         android:text="About Us"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#fff"
                         android:textStyle="bold" />
 
                     <ImageView
@@ -133,6 +144,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
+                        app:tint="#fff"
                         android:src="@drawable/right_arrow_icon" />
                 </RelativeLayout>
 
@@ -157,7 +169,7 @@
                         android:layout_marginStart="20dp"
                         android:layout_toEndOf="@+id/about_app_Icon"
                         android:text="About App"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#fff"
                         android:textStyle="bold" />
 
                     <ImageView
@@ -165,6 +177,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
+                        app:tint="#fff"
                         android:src="@drawable/right_arrow_icon" />
                 </RelativeLayout>
 
