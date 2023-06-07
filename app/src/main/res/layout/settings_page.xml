@@ -106,13 +106,16 @@
                         android:textColor="#fff"
                         android:textStyle="bold" />
 
-                    <ImageView
-                        app:tint="#fff"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <ImageButton
+                        android:layout_width="40dp"
+                        android:layout_height="50sp"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:src="@drawable/right_arrow_icon" />
+                        android:background="@drawable/click"
+                        android:clickable="true"
+                        android:src="@drawable/right_arrow_icon"
+                        app:tint="#fff"
+                        tools:ignore="TouchTargetSizeCheck" />
                 </RelativeLayout>
 
                 <!-- About Us -->
@@ -139,13 +142,16 @@
                         android:textColor="#fff"
                         android:textStyle="bold" />
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <ImageButton
+                        android:layout_width="40dp"
+                        android:layout_height="50sp"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
+                        android:background="@drawable/click"
+                        android:clickable="true"
+                        android:src="@drawable/right_arrow_icon"
                         app:tint="#fff"
-                        android:src="@drawable/right_arrow_icon" />
+                        tools:ignore="TouchTargetSizeCheck" />
                 </RelativeLayout>
 
                 <!-- About App -->
@@ -172,13 +178,16 @@
                         android:textColor="#fff"
                         android:textStyle="bold" />
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <ImageButton
+                        android:layout_width="40dp"
+                        android:layout_height="50sp"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
+                        android:background="@drawable/click"
+                        android:clickable="true"
+                        android:src="@drawable/right_arrow_icon"
                         app:tint="#fff"
-                        android:src="@drawable/right_arrow_icon" />
+                        tools:ignore="TouchTargetSizeCheck" />
                 </RelativeLayout>
 
 
