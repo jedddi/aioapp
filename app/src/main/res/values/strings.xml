@@ -19,4 +19,11 @@
     <string name="show_more_arrow">show_more_arrow</string>
     <string name="add_list_button">add_list_button</string>
     <string name="add_list_button1">add_list_button</string>
+    <string name="arrowbtn_bottomsheet" />
+    <string name="newtask_text" />
+    <string name="task_name" />
+    <string name="Location" />
+    <string name="mm_dd_year" />
+    <string name="cancel_btn_bottomsheet" />
+    <string name="add_task_btn_bottomsheet" />
 </resources>

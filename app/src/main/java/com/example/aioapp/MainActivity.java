@@ -1,88 +1,66 @@
 package com.example.aioapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-import android.app.Dialog;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.content.Intent;
-import android.widget.ImageButton;
+import android.graphics.drawable.AnimationDrawable;
+import android.os.Bundle;
+import android.widget.Button;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.ImageView;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Calendar;
-
-import devs.mulham.horizontalcalendar.HorizontalCalendar;
-import devs.mulham.horizontalcalendar.utils.HorizontalCalendarListener;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import android.view.MenuItem;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class MainActivity extends AppCompatActivity {
+    private ImageView imageView;
 
-    ImageButton addlistbtn;
-
-    Dialog mDialog;
-
-    private HorizontalCalendar horizontalCalendar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.to_do_list_page);
+        setContentView(R.layout.activity_main);
 
-        addlistbtn = findViewById(R.id.addlistbtn);
-        mDialog = new Dialog(this);
+        // Create the scale up animation
+        ObjectAnimator scaleUpX = ObjectAnimator.ofFloat(imageView, "scaleX", 1f, 1.2f);
+        scaleUpX.setDuration(5000);
+        scaleUpX.setInterpolator(new AccelerateDecelerateInterpolator());
+        scaleUpX.setRepeatCount(ObjectAnimator.INFINITE);
+        scaleUpX.setRepeatMode(ObjectAnimator.REVERSE);
 
-        addlistbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mDialog.setContentView(R.layout.add_list_bottomsheet);
-                mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                mDialog.show();
-            }
-        });
+        ObjectAnimator scaleUpY = ObjectAnimator.ofFloat(imageView, "scaleY", 1f, 1.2f);
+        scaleUpY.setDuration(5000);
+        scaleUpY.setInterpolator(new AccelerateDecelerateInterpolator());
+        scaleUpY.setRepeatCount(ObjectAnimator.INFINITE);
+        scaleUpY.setRepeatMode(ObjectAnimator.REVERSE);
 
-        /* starts before 1 month from now */
-        Calendar startDate = Calendar.getInstance();
-        startDate.add(Calendar.MONTH, -1);
+        // Create the fade in animation
+        ObjectAnimator fadeIn = ObjectAnimator.ofFloat(imageView, "alpha", 0f, 1f);
+        fadeIn.setDuration(5000);
+        fadeIn.setInterpolator(new AccelerateDecelerateInterpolator());
+        fadeIn.setRepeatCount(ObjectAnimator.INFINITE);
+        fadeIn.setRepeatMode(ObjectAnimator.REVERSE);
 
-        /* ends after 1 month from now */
-        Calendar endDate = Calendar.getInstance();
-        endDate.add(Calendar.MONTH, 1);
+        // Combine the scale up and fade in animations into a set
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.playTogether(scaleUpX, scaleUpY, fadeIn);
 
-        HorizontalCalendar horizontalCalendar = new HorizontalCalendar.Builder(this, R.id.calendarView)
-                .range(startDate, endDate)
-                .datesNumberOnScreen(5)
-                .build();
+        // Start the animation
+        animatorSet.start();
 
-        horizontalCalendar.setCalendarListener(new HorizontalCalendarListener() {
-            @Override
-            public void onDateSelected(Calendar date, int position) {
-                //do something
-            }
-        });
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.company:
-                        // Handle company item click
-                        return true;
-                    case R.id.home:
-                        // Handle home item click
-                        return true;
-                    case R.id.notification:
-                        // Handle notification item click
-                        startActivity(new Intent(MainActivity.this, NotificationActivity.class));
-                        return true;
-                    case R.id.settings:
-                        // Handle settings item click
-                        return true;
-                }
-                return false;
-            }
-        });
+        ConstraintLayout constraintLayout = findViewById(R.id.relativeLayout);
+
+        AnimationDrawable animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(2500);
+        animationDrawable.setExitFadeDuration(5000);
+        animationDrawable.start();
+
+        Button button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(v -> openDashboard());
+    }
+    public void openDashboard(){
+        Intent intent = new Intent(this, Dashboard_activity.class);
+        startActivity(intent);
     }
 }

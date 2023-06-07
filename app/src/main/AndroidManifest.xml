@@ -15,9 +15,6 @@
             android:name=".NotificationActivity"
             android:exported="false" />
         <activity
-            android:name=".Dashboard_activity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.Design.Light.NoActionBar">
@@ -27,6 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Dashboard_activity"/>
         <activity android:name=".Todolist" />
         <activity android:name=".financetracker" />
         <activity android:name=".Pomodoro" />

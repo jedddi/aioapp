@@ -4,12 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Calendar;
 
@@ -59,6 +62,28 @@ public class Dashboard_activity extends AppCompatActivity {
             }
         });
 
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.company:
+                        // Handle company item click
+                        return true;
+                    case R.id.home:
+                        // Handle home item click
+                        return true;
+                    case R.id.notification:
+                        // Handle notification item click
+                        startActivity(new Intent(Dashboard_activity.this, NotificationActivity.class));
+                        return true;
+                    case R.id.settings:
+                        // Handle settings item click
+                        return true;
+                }
+                return false;
+            }
+        });
 
     }
 
