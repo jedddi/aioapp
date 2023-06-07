@@ -51,7 +51,7 @@ public class Settings extends AppCompatActivity {
             }
         });
 
-        ImageButton backButton = findViewById(R.id.back_btn);
+        ImageButton backButton = findViewById(R.id.returnDash);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
