@@ -71,19 +71,23 @@
             android:gravity="center_horizontal">
 
             <ImageButton
+                android:clickable="true"
+                android:background="@drawable/click"
                 android:id="@+id/todolist_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
-                android:background="@drawable/todolist_btn"
+                android:src="@drawable/todolist_btn"
                 android:contentDescription="To-Do List Button" />
 
             <ImageButton
+                android:clickable="true"
+                android:background="@drawable/click"
                 android:id="@+id/finance_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:background="@drawable/finance_btn"
+                android:src="@drawable/finance_btn"
                 android:contentDescription="Finance Button" />
         </TableRow>
 
@@ -95,19 +99,23 @@
             android:gravity="center_horizontal">
 
             <ImageButton
+                android:clickable="true"
+                android:background="@drawable/click"
                 android:id="@+id/pomodoro_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
-                android:background="@drawable/pomdoro_btn"
+                android:src="@drawable/pomdoro_btn"
                 android:contentDescription="Pomodoro Button" />
 
             <ImageButton
+                android:clickable="true"
+                android:background="@drawable/click"
                 android:id="@+id/journal_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:background="@drawable/journal_btn"
+                android:src="@drawable/journal_btn"
                 android:contentDescription="Journal Button" />
         </TableRow>
 

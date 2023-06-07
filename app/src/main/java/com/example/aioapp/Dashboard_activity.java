@@ -1,12 +1,14 @@
 package com.example.aioapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -84,6 +86,32 @@ public class Dashboard_activity extends AppCompatActivity {
                 return false;
             }
         });
+
+    }
+
+    private void setSingleEvent(GridLayout gridLayout) {
+        for (int i = 0; i < gridLayout.getChildCount(); i++) {
+            CardView cardView = (CardView) gridLayout.getChildAt(i);
+            final int finalI = i;
+            cardView.setOnClickListener(v -> {
+                if (finalI==0){
+                    Intent intent = new Intent(Dashboard_activity.this, Todolist.class);
+                    startActivity(intent);
+                }
+                else if (finalI==1){
+                    Intent intent = new Intent(Dashboard_activity.this, financetracker.class);
+                    startActivity(intent);
+                } else if (finalI==2) {
+                    Intent intent = new Intent(Dashboard_activity.this, Pomodoro.class);
+                    startActivity(intent);
+                } else if(finalI==3) {
+                    Intent intent = new Intent(Dashboard_activity.this, Journal.class);
+                    startActivity(intent);
+                }
+
+
+            });
+        }
 
     }
 
