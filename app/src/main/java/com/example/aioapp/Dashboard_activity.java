@@ -67,18 +67,19 @@ public class Dashboard_activity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.company:
-                        // Handle company item click
-                        return true;
+
                     case R.id.home:
                         // Handle home item click
                         return true;
                     case R.id.notification:
                         // Handle notification item click
-                        startActivity(new Intent(Dashboard_activity.this, NotificationActivity.class));
+                        startActivity(new Intent(getApplicationContext(),NotificationActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.settings:
                         // Handle settings item click
+                        startActivity(new Intent(getApplicationContext(),Settings.class));
+                        overridePendingTransition(0,0);
                         return true;
                 }
                 return false;

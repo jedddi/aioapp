@@ -64,32 +64,6 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int itemId = item.getItemId();
-        switch (itemId) {
-            case R.id.company:
-                // Handle "Company" menu item selection
-
-                return true;
-            case R.id.home:
-                // Handle "Home" menu item selection
-                openDashboard();
-                return true;
-            case R.id.notification:
-                // Handle "Notification" menu item selection
-                Intent notificationIntent = new Intent(MainActivity.this, NotificationActivity.class);
-                startActivity(notificationIntent);
-                return true;
-            case R.id.settings:
-                // Handle "Settings" menu item selection
-                Intent settingsIntent = new Intent(MainActivity.this, Settings.class);
-                startActivity(settingsIntent);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 
     public void openDashboard() {
         Intent intent = new Intent(this, Dashboard_activity.class);
