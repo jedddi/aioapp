@@ -11,12 +11,13 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#fff">
 
         <ImageButton
             android:id="@+id/returnDash"
             android:clickable="true"
-            android:background="@drawable/click"
+            android:background="@drawable/click2"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:contentDescription="TODO"

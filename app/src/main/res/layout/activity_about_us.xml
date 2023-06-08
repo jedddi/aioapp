@@ -15,7 +15,7 @@
             android:id="@+id/backDash"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@drawable/click"
+            android:background="@drawable/click2"
             android:clickable="true"
             android:contentDescription="TODO"
             android:padding="14dp"
