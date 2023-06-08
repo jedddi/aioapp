@@ -150,6 +150,7 @@
                         android:textStyle="bold" />
 
                     <ImageButton
+                        android:id="@+id/buttonAu"
                         android:layout_width="40dp"
                         android:layout_height="50sp"
                         android:layout_alignParentEnd="true"

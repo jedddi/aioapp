@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         ConstraintLayout constraintLayout = findViewById(R.id.relativeLayout);
         AnimationDrawable animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
-        animationDrawable.setEnterFadeDuration(2500);
+        animationDrawable.setEnterFadeDuration(3500);
         animationDrawable.setExitFadeDuration(5000);
         animationDrawable.start();
 

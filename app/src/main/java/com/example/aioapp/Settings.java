@@ -17,6 +17,7 @@ public class Settings extends AppCompatActivity {
 
     private ImageButton sendFeedbackButton;
     private ImageButton backButton;
+    private ImageButton goButtonau;
     private ImageView messageIcon;
     private TextView sendFeedbackText;
 
@@ -56,6 +57,16 @@ public class Settings extends AppCompatActivity {
                 startActivity(back_Dashboard);
             }
         });
+
+        goButtonau = findViewById(R.id.buttonAu);
+        goButtonau.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent go_AboutUs = new Intent(Settings.this, AboutUs.class);
+                startActivity(go_AboutUs);
+            }
+        });
+
 
         sendFeedbackButton = findViewById(R.id.sendFeedbackButton);
         sendFeedbackButton.setOnClickListener(new View.OnClickListener() {

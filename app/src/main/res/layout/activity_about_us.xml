@@ -1,9 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AboutUs">
+    android:id="@+id/constraintLayout"
+    android:background="@drawable/gradient_list">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff">
+
+        <ImageButton
+            android:id="@+id/backDash"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/click"
+            android:clickable="true"
+            android:contentDescription="TODO"
+            android:padding="14dp"
+            android:src="@drawable/back_btn"
+            app:tint="@color/black" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/bebas"
+            android:gravity="center_horizontal"
+            android:text="About us"
+            android:textColor="#000"
+            android:textSize="30sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="350dp"
+            android:layout_height="160dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="53dp"
+            android:layout_marginEnd="62dp"
+            android:shadowColor="@color/black"
+            android:shadowDx="1.5"
+            android:shadowDy="1.8"
+            android:shadowRadius="60.6"
+            android:src="@drawable/cyber6" />
+
+        <TextView
+            android:id="@+id/cyber6"
+            android:layout_width="260dp"
+            android:layout_height="90sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="78dp"
+            android:layout_marginTop="170dp"
+            android:layout_marginEnd="72dp"
+            android:fontFamily="@font/righteous"
+            android:gravity="center"
+            android:shadowColor="@color/black"
+            android:shadowDx="1.5"
+            android:shadowDy="1.8"
+            android:shadowRadius="20.6"
+            android:text="CYBER 6"
+            android:textColor="#fff"
+            android:textSize="50dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="350sp"
+            android:layout_height="500dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="250dp"
+            android:fontFamily="@font/britannic"
+            android:justificationMode="inter_word"
+            android:lineSpacingExtra="8dp"
+            android:text="@string/desc"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:shadowColor="@color/black"
+            android:shadowDx="1.5"
+            android:shadowDy="1.8"
+            android:shadowRadius="20.6"/>
+
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
