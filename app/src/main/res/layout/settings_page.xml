@@ -94,9 +94,11 @@
                         android:layout_height="40dp"
                         android:background="@color/send_feedback"
                         android:padding="12dp"
-                        android:src="@drawable/message_icon" />
+                        android:src="@drawable/message_icon"
+                        android:clickable="true" />
 
                     <TextView
+                        android:id="@+id/sendFeedbackText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -104,9 +106,11 @@
                         android:layout_toEndOf="@+id/messageIcon"
                         android:text="Send Feedback"
                         android:textColor="#fff"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:clickable="true" />
 
                     <ImageButton
+                        android:id="@+id/sendFeedbackButton"
                         android:layout_width="40dp"
                         android:layout_height="50sp"
                         android:layout_alignParentEnd="true"
@@ -117,6 +121,9 @@
                         app:tint="#fff"
                         tools:ignore="TouchTargetSizeCheck" />
                 </RelativeLayout>
+
+
+
 
                 <!-- About Us -->
                 <RelativeLayout
