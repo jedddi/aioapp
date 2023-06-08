@@ -1,5 +1,6 @@
 package com.example.aioapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -8,11 +9,13 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -87,6 +90,17 @@ public class Dashboard_activity extends AppCompatActivity {
                 return false;
             }
         });
+
+       /* CalendarView calendarView = findViewById(R.id.calendarView2);
+
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                // Handle the selected date here
+                String selectedDate = dayOfMonth + "/" + (month + 1) + "/" + year;
+                Toast.makeText(Dashboard_activity.this, "Selected date: " + selectedDate, Toast.LENGTH_SHORT).show();
+            }
+        });*/
 
     }
 
