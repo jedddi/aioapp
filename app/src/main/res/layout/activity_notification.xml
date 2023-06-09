@@ -13,10 +13,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/click"
-        android:foregroundTint="@color/black"
-        android:backgroundTint="@color/black"
-        app:menu="@menu/bottom_nav_menu" />
+        android:background="#cccccc"
+        android:src="@drawable/click"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemTextColor="@drawable/icon_tint_selector"
+        app:itemIconTint="@drawable/icon_tint_selector"/>
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"

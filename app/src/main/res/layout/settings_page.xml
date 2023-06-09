@@ -221,11 +221,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:background="@drawable/click"
-            android:foregroundTint="@color/black"
-            android:backgroundTint="@color/black"
+            android:background="#cccccc"
+            android:src="@drawable/click"
             app:menu="@menu/bottom_nav_menu"
-            android:layout_gravity="bottom"/>
+            android:layout_gravity="bottom"
+            app:itemTextColor="@drawable/icon_tint_selector"
+            app:itemIconTint="@drawable/icon_tint_selector"/>
 
     </LinearLayout>
     
