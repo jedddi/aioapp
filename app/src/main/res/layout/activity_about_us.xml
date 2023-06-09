@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/constraintLayout"
     android:background="@drawable/gradient_list">
 
     <RelativeLayout
+        android:id="@+id/relativeLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#cccccc">
@@ -23,6 +25,7 @@
             app:tint="@color/black" />
 
         <TextView
+            android:id="@+id/aboutUs"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -35,61 +38,108 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
+    <TextView
+        android:id="@+id/cyber6"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/righteous"
+        android:gravity="center"
+        android:shadowColor="@color/black"
+        android:shadowDx="1.5"
+        android:shadowDy="1.8"
+        android:shadowRadius="20.6"
+        android:text="CYBER 6"
+        android:textColor="#fff"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
 
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="350dp"
-            android:layout_height="160dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="53dp"
-            android:layout_marginEnd="62dp"
-            android:shadowColor="@color/black"
-            android:shadowDx="1.5"
-            android:shadowDy="1.8"
-            android:shadowRadius="60.6"
-            android:src="@drawable/cyber6" />
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:shadowColor="@color/black"
+        android:shadowDx="1.5"
+        android:shadowDy="1.8"
+        android:shadowRadius="60.6"
+        android:src="@drawable/cyber6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout3" />
 
-        <TextView
-            android:id="@+id/cyber6"
-            android:layout_width="260dp"
-            android:layout_height="90sp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="78dp"
-            android:layout_marginTop="170dp"
-            android:layout_marginEnd="72dp"
-            android:fontFamily="@font/righteous"
-            android:gravity="center"
-            android:shadowColor="@color/black"
-            android:shadowDx="1.5"
-            android:shadowDy="1.8"
-            android:shadowRadius="20.6"
-            android:text="CYBER 6"
-            android:textColor="#fff"
-            android:textSize="50dp"
-            android:textStyle="bold" />
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="403dp"
+        android:layout_height="530dp"
+        android:layout_marginTop="28dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@+id/cyber6">
 
-        <TextView
-            android:layout_width="350sp"
-            android:layout_height="500dp"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="250dp"
-            android:fontFamily="@font/britannic"
-            android:justificationMode="inter_word"
-            android:lineSpacingExtra="8dp"
-            android:text="@string/desc"
-            android:textColor="@color/white"
-            android:textSize="18dp"
-            android:shadowColor="@color/black"
-            android:shadowDx="1.5"
-            android:shadowDy="1.8"
-            android:shadowRadius="20.6"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="821dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="0dp"
+                android:orientation="vertical">
 
-    </RelativeLayout>
+                <TextView
+                    android:layout_width="313dp"
+                    android:layout_height="423dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/righteous"
+                    android:gravity="center_horizontal"
+                    android:justificationMode="inter_word"
+                    android:lineSpacingExtra="8dp"
+                    android:shadowColor="@color/black"
+                    android:shadowDx="1.5"
+                    android:shadowDy="1.8"
+                    android:shadowRadius="10.6"
+                    android:text="  At CYBER-6, we have come up with a development application that can help a person be more productive on their own daily basis. Our platform leverages the latest location-based technology to provide the tools and resources you need with just a click. Unlike some other applications that demand a consistent online connection, CYBER-6 develops an all-in-one production organization application that functions more, even when you are not connected to the internet. As a result, users can still access and manage their daily plans, as well as obtain the information they require."
+                    android:textColor="#fff"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/righteous"
+                    android:shadowColor="@color/black"
+                    android:shadowDx="1.5"
+                    android:shadowDy="1.8"
+                    android:shadowRadius="10.6"
+                    android:text="Meet The Team:"
+                    android:textAllCaps="true"
+                    android:textColor="#fff"
+                    android:textSize="30dp" />
+
+                <ImageView
+                    android:layout_width="350dp"
+                    android:layout_height="300dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/team" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
