@@ -61,7 +61,7 @@ public class AboutUs extends AppCompatActivity {
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent back_Dashboard = new Intent(AboutUs.this, Dashboard_activity.class);
+                Intent back_Dashboard = new Intent(AboutUs.this, Settings.class);
                 startActivity(back_Dashboard);
             }
         });
