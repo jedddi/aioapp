@@ -58,12 +58,6 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(v -> openDashboard());
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.bottom_nav_menu, menu);
-        return true;
-    }
-
 
     public void openDashboard() {
         Intent intent = new Intent(this, Dashboard_activity.class);

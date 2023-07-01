@@ -46,6 +46,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="650dp"
+        android:backgroundTint="#bdbebe"
+        android:textColor="@color/black"
         android:text="Return to dashboard"
         android:fontFamily="@font/bungee"
         android:layout_centerHorizontal="true"/>
