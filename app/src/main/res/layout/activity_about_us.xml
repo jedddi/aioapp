@@ -11,7 +11,8 @@
         android:id="@+id/relativeLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#cccccc">
+        android:background="#cccccc"
+        tools:ignore="MissingConstraints">
 
         <ImageButton
             android:id="@+id/backDash"
@@ -81,7 +82,8 @@
         android:layout_height="530dp"
         android:layout_marginTop="28dp"
         android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@+id/cyber6">
+        app:layout_constraintTop_toBottomOf="@+id/cyber6"
+        tools:ignore="MissingConstraints">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -130,13 +132,13 @@
                     android:textColor="#fff"
                     android:textSize="30dp" />
 
-                <ImageView
-                    android:layout_width="350dp"
-                    android:layout_height="300dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/team" />
-
             </LinearLayout>
+
+            <ImageView
+                android:layout_width="350dp"
+                android:layout_height="294dp"
+                android:layout_marginTop="470dp"
+                android:src="@drawable/team" />
         </RelativeLayout>
 
     </ScrollView>

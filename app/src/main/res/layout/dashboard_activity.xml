@@ -152,7 +152,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView9"
         app:month_color="#d9d9d9"
         app:selected_day_text_color="#FDFDFD"
-        app:selector_color="#d9d9d9"
+        app:selector_color="#60d9d9d9"
         app:week_name_color="#d9d9d9" />
 
 

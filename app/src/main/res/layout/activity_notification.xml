@@ -5,6 +5,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".NotificationActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#cccccc"
+        tools:ignore="MissingConstraints">
+
+        <ImageButton
+            android:id="@+id/returnDash"
+            android:clickable="true"
+            android:background="@drawable/click2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="TODO"
+            android:padding="14dp"
+            android:src="@drawable/back_btn"
+            app:tint="@color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/bebas"
+            android:text="Notification"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+    </RelativeLayout>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -18,20 +47,6 @@
         app:menu="@menu/bottom_nav_menu"
         app:itemTextColor="@drawable/icon_tint_selector"
         app:itemIconTint="@drawable/icon_tint_selector"/>
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Notifications"
-        android:gravity="center"
-        android:textSize="40dp"
-        android:textStyle="bold"
-        android:fontFamily="sans-serif-condensed"
-        android:textColor="@color/black"
-        android:padding="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
