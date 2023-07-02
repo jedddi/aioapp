@@ -26,4 +26,8 @@
     <string name="mm_dd_year" />
     <string name="cancel_btn_bottomsheet" />
     <string name="add_task_btn_bottomsheet" />
+    <string name="logo">logo</string>
+    <string name="desc" translatable="false">
+                  \u0020 At CYBER-6, we have come up with a development application that can help a person be more productive on their own daily basis. Our platform leverages the latest location-based technology to provide the tools and resources you need with just a click. Unlike some other applications that demand a consistent online connection, CYBER-6 develops an all-in-one production organization application that functions more, even when you are not connected to the internet. As a result, users can still access and manage their daily plans, as well as obtain the information they require.
+    </string>
 </resources>

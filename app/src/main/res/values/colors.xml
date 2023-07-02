@@ -12,4 +12,6 @@
     <color name="about_us">#6124B1</color>
     <color name="send_feedback">#E6A326</color>
     <color name="about_app">#D95F69</color>
+    <color name="max_blue">#30d9ef</color>
+    <color name="min_blue">#96e8f3</color>
 </resources>

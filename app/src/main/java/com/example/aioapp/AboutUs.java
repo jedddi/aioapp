@@ -1,26 +1,28 @@
 package com.example.aioapp;
 
-import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.animation.AccelerateDecelerateInterpolator;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-public class MainActivity extends AppCompatActivity {
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
+import android.os.Bundle;
+import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.ImageView;
+
+import android.widget.ImageButton;
+
+public class AboutUs extends AppCompatActivity {
+    private ImageButton returnButton;
     private ImageView imageView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_about_us);
         // Create the scale up animation
         ObjectAnimator scaleUpX = ObjectAnimator.ofFloat(imageView, "scaleX", 1f, 1.2f);
         scaleUpX.setDuration(5000);
@@ -48,19 +50,20 @@ public class MainActivity extends AppCompatActivity {
         // Start the animation
         animatorSet.start();
 
-        ConstraintLayout constraintLayout = findViewById(R.id.relativeLayout);
+        ConstraintLayout constraintLayout = findViewById(R.id.constraintLayout);
         AnimationDrawable animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
         animationDrawable.setEnterFadeDuration(3500);
         animationDrawable.setExitFadeDuration(5000);
         animationDrawable.start();
 
-        Button button = findViewById(R.id.button);
-        button.setOnClickListener(v -> openDashboard());
-    }
 
-
-    public void openDashboard() {
-        Intent intent = new Intent(this, Dashboard_activity.class);
-        startActivity(intent);
+        returnButton = findViewById(R.id.backDash);
+        returnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent back_Dashboard = new Intent(AboutUs.this, Settings.class);
+                startActivity(back_Dashboard);
+            }
+        });
     }
 }

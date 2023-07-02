@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_list">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#cccccc"
+        tools:ignore="MissingConstraints">
+
+        <ImageButton
+            android:id="@+id/backSettings"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/click2"
+            android:clickable="true"
+            android:contentDescription="TODO"
+            android:padding="14dp"
+            android:src="@drawable/back_btn"
+            app:tint="@color/black" />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/bebas"
+            android:gravity="center_horizontal"
+            android:text="About App"
+            android:textColor="#000"
+            android:textSize="30sp" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/bungee"
+        android:gravity="center_horizontal"
+        android:shadowColor="@color/black"
+        android:shadowDx="2.5"
+        android:shadowDy="2.8"
+        android:shadowRadius="20.6"
+        android:text="A I O"
+        android:textColor="#FFF"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="403dp"
+        android:layout_height="530dp"
+        android:layout_marginTop="67dp"
+        android:fillViewport="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="1dp">
+
+            <LinearLayout
+                android:layout_width="367dp"
+                android:layout_height="1237dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="20dp"
+                android:background="#201d1d1d"
+                android:orientation="vertical"
+                android:padding="15dp"
+                android:src="@drawable/round_back_white10_20">
+
+                <TextView
+                    android:layout_width="313dp"
+                    android:layout_height="316dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/righteous"
+                    android:gravity="center_horizontal"
+                    android:justificationMode="inter_word"
+                    android:lineSpacingExtra="8dp"
+                    android:shadowColor="@color/black"
+                    android:shadowDx="1.5"
+                    android:shadowDy="1.8"
+                    android:shadowRadius="10.6"
+                    android:text="  This application will provide users with a comprehensive solution to their organizational needs while also increasing their overall productivity and efficiency. By identifying the essential points that customers are seeking in an organizing app, analyzing the usability and user satisfaction of the market's leading popular organizing applications, and proposing an innovative approach that addresses the gaps in existing apps."
+                    android:textColor="#fff"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="315dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/righteous"
+                    android:gravity="center_horizontal"
+                    android:justificationMode="inter_word"
+                    android:lineSpacingExtra="8dp"
+                    android:shadowColor="@color/black"
+                    android:shadowDx="1.5"
+                    android:shadowDy="1.8"
+                    android:shadowRadius="10.6"
+                    android:text="  This application increases efficiency, by having all production-related tasks in one place, which can eliminate the need for multiple software systems and reduce the time and effort required to manage production processes. The application also provides real-time updates on production activities, allowing organizations to quickly identify and address any issues that may arise."
+                    android:textColor="#fff"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/righteous"
+                    android:text="Features:"
+                    android:shadowColor="@color/black"
+                    android:shadowDx="1.5"
+                    android:shadowDy="1.8"
+                    android:shadowRadius="10.6"
+                    android:textColor="#fff"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/righteous"
+                    android:drawableStart="@drawable/box"
+                    android:text="To-Do List"
+                    android:textColor="#fff"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginHorizontal="13dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/righteous"
+                    android:justificationMode="inter_word"
+                    android:lineSpacingExtra="8dp"
+                    android:shadowColor="@color/black"
+                    android:shadowDx="1.5"
+                    android:shadowDy="1.8"
+                    android:shadowRadius="10.6"
+                    android:text="  The application will organize tasks from least to most important with a dedicated deadline tracker."
+                    android:textColor="#fff"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="90dp"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/righteous"
+                    android:drawableStart="@drawable/box"
+                    android:text="Pomodoro Timer"
+                    android:textColor="#fff"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="73dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginHorizontal="13dp"
+                    android:fontFamily="@font/righteous"
+                    android:justificationMode="inter_word"
+                    android:lineSpacingExtra="8dp"
+                    android:shadowColor="@color/black"
+                    android:shadowDx="1.5"
+                    android:shadowDy="1.8"
+                    android:shadowRadius="10.6"
+                    android:text=" It includes a time-management system that motivates users to make the most of their available time."
+                    android:textColor="#fff"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="90dp"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/righteous"
+                    android:drawableStart="@drawable/box"
+                    android:text="Finance Tracker"
+                    android:textColor="#fff"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="51dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginHorizontal="13dp"
+                    android:fontFamily="@font/righteous"
+                    android:justificationMode="inter_word"
+                    android:lineSpacingExtra="8dp"
+                    android:shadowColor="@color/black"
+                    android:shadowDx="1.5"
+                    android:shadowDy="1.8"
+                    android:shadowRadius="10.6"
+                    android:text="  A financial tracker that helps to manage personal or business finances."
+                    android:textColor="#fff"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="95dp"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableStart="@drawable/box"
+                    android:fontFamily="@font/righteous"
+                    android:text="Journal"
+                    android:textColor="#fff"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="75dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginHorizontal="13dp"
+                    android:fontFamily="@font/righteous"
+                    android:justificationMode="inter_word"
+                    android:lineSpacingExtra="8dp"
+                    android:shadowColor="@color/black"
+                    android:shadowDx="1.5"
+                    android:shadowDy="1.8"
+                    android:shadowRadius="10.6"
+                    android:text=" A notes-app-like feature that keeps track of the user's daily thoughts."
+                    android:textColor="#fff"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="146dp"
+                    android:layout_height="39dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="@font/britannic"
+                    android:shadowColor="@color/black"
+                    android:shadowDx="1.5"
+                    android:shadowDy="1.8"
+                    android:shadowRadius="10.6"
+                    android:text="All Rights Reserved 2023"
+                    android:textAlignment="center"
+                    android:textColor="#fff"
+                    android:textSize="16dp" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

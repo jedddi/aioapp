@@ -33,7 +33,11 @@
           app:layout_constraintLeft_toLeftOf="parent"
           app:layout_constraintRight_toRightOf="parent"
           app:layout_constraintTop_toTopOf="parent"
-          tools:ignore="LabelFor"></TextView>
+          tools:ignore="LabelFor"
+          android:shadowColor="@color/black"
+          android:shadowDx="2.5"
+          android:shadowDy="2.8"
+          android:shadowRadius="20.6"></TextView>
 
       <TextView
           android:id="@+id/textView8"
@@ -47,7 +51,11 @@
           android:textSize="40dp"
           app:layout_constraintLeft_toLeftOf="parent"
           app:layout_constraintRight_toRightOf="parent"
-          app:layout_constraintTop_toTopOf="parent"/>
+          app:layout_constraintTop_toTopOf="parent"
+          android:shadowColor="@color/black"
+          android:shadowDx="1.5"
+          android:shadowDy="1.8"
+          android:shadowRadius="20.6"/>
 
       <TextView
           android:id="@+id/textView9"
@@ -61,7 +69,11 @@
           android:textSize="35dp"
           app:layout_constraintLeft_toLeftOf="parent"
           app:layout_constraintRight_toRightOf="parent"
-          app:layout_constraintTop_toTopOf="parent"/>
+          app:layout_constraintTop_toTopOf="parent"
+          android:shadowColor="@color/black"
+          android:shadowDx="1.5"
+          android:shadowDy="1.8"
+          android:shadowRadius="20.6"/>
 
 
       <Button
@@ -73,7 +85,11 @@
           android:background="@drawable/bg"
           android:text="Continue"
           android:fontFamily="@font/bebasneue"
-          android:textColor="#000000"
+          android:textColor="#fff"
+          android:shadowColor="@color/black"
+          android:shadowDx="2.5"
+          android:shadowDy="2.8"
+          android:shadowRadius="20.12"
           android:textSize="25dp"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toStartOf="parent"
