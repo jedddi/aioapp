@@ -1,5 +1,6 @@
 package com.example.aioapp;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
@@ -12,14 +13,26 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.aioapp.Adapter.todoadapter;
+import com.example.aioapp.Model.todomodel;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private ImageView imageView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+
 
         // Create the scale up animation
         ObjectAnimator scaleUpX = ObjectAnimator.ofFloat(imageView, "scaleX", 1f, 1.2f);
