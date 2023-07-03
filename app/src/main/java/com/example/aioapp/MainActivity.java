@@ -75,33 +75,8 @@ public class MainActivity extends AppCompatActivity {
         Button button = findViewById(R.id.button);
         button.setOnClickListener(v -> openDashboard());
 
-        //For adding and Deleting task
-        //kani nalang ang kulang if mu work nani goods na
-       // db = new databasehandler(this);
-       // db.openDatabase();
-
-        //taskList = new ArrayList<>();
-
-        //tasksRecyclerView = findViewById(R.id.tasksRecyclerView);
-        //tasksRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        //taskAdapter = new todoadapter(this);
-        //tasksRecyclerView.setAdapter(taskAdapter);
-        //fab = findViewById(R.id.fab);
-        //ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new RecyclerItemTouchHelper(tasksAdapter));
-        //itemTouchHelper.attachToRecyclerView(tasksRecyclerView);
-
-        //taskList = db.getAllTask();
-        //Collections.reverse(taskList);
-        //taskAdapter.setTasks(taskList);
     }
-    //@Override
-    //public void handleDialogClose(DialogInterface dialog){
-       // taskList = db.getAllTask();
-       // Collections.reverse(taskList);
-       // taskAdapter.setTasks(taskList);
-       // taskAdapter.notifyDataSetChanged();
 
-//}
 
 
     public void openDashboard() {
