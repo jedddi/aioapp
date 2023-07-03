@@ -40,6 +40,7 @@ import java.util.Objects;
 import com.example.aioapp.Adapter.todoadapter;
 import com.example.aioapp.Model.todomodel;
 import com.example.aioapp.utils.databasehandler;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Todolist extends AppCompatActivity implements DialogCloseListener{
 
@@ -55,6 +56,8 @@ public class Todolist extends AppCompatActivity implements DialogCloseListener{
     private List<todomodel> taskList;
     private databasehandler db;
     private RecyclerView tasksRecyclerView;
+    private ImageButton fab;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,6 +117,7 @@ public class Todolist extends AppCompatActivity implements DialogCloseListener{
 
         //For adding and Deleting task
         //kani nalang ang kulang if mu work nani goods na
+
         db = new databasehandler(this);
         db.openDatabase();
 
@@ -127,11 +131,21 @@ public class Todolist extends AppCompatActivity implements DialogCloseListener{
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new RecyclerItemTouchHelper(taskAdapter));
         itemTouchHelper.attachToRecyclerView(tasksRecyclerView);
 
+        //fab = findViewById(R.id.add_task_button);
+
         taskList = db.getAllTask();
         Collections.reverse(taskList);
         taskAdapter.setTasks(taskList);
-    }
 
+
+        //fab.setOnClickListener(new View.OnClickListener(){
+            //@Override
+            //public void onClick(View v){
+                //AddTask.newInstance().show(getSupportFragmentManager(), AddTask.TAG);
+            //}
+        //});
+    }
+     @Override
     public void handleDialogClose(DialogInterface dialog){
      taskList = db.getAllTask();
      Collections.reverse(taskList);
