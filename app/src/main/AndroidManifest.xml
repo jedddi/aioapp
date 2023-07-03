@@ -4,6 +4,10 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -38,11 +42,7 @@
         <activity android:name=".Dashboard_activity" />
         <activity android:name=".Todolist" />
         <activity android:name=".financetracker" />
-        <activity
-            android:name=".Pomodoro"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
-        </activity>
+   <activity android:name=".Pomodoro"/>
         <activity android:name=".Journal" />
         <activity android:name=".Settings" />
     </application>
