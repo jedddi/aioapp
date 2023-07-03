@@ -28,26 +28,27 @@ public class AddTask extends BottomSheetDialogFragment {
     public static AddTask newInstance(){
         return new AddTask();
     }
-    @Override
-    public void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setStyle(STYLE_NORMAL, R.style.DialogStyle);
-    }
+//    @Override
+////    public void onCreate(Bundle savedInstanceState){
+////        super.onCreate(savedInstanceState);
+////        setStyle(STYLE_NORMAL, R.style.DialogStyle);
+////    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        View view = inflater.inflate(R.layout.to_do_list_page, container, false);
+        View view = inflater.inflate(R.layout.add_list_bottomsheet, container, false);
         getDialog().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         return view;
     }
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
-        newTaskText = getView().findViewById(R.id.to_do_list_page);
-        newTaskSaveButton = getView().findViewById(R.id.add_list_bottomsheet);
+        newTaskText = getView().findViewById(R.id.task_name);
+        newTaskSaveButton = getView().findViewById(R.id.add_task_button);
         db = new databasehandler(getActivity());
         db.openDatabase();
 
         boolean isUpdate = false;
+
         final Bundle bundle = getArguments();
         if(bundle != null) {
             isUpdate = true;

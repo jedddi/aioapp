@@ -14,6 +14,7 @@ import com.example.aioapp.AddTask;
 import com.example.aioapp.MainActivity;
 import com.example.aioapp.Model.todomodel;
 import com.example.aioapp.R;
+import com.example.aioapp.Todolist;
 import com.example.aioapp.utils.databasehandler;
 
 import java.util.List;
@@ -23,9 +24,9 @@ public class todoadapter<TodoList> extends RecyclerView.Adapter<todoadapter.View
     private List<todomodel> todoList;
     private databasehandler db;
 
-    private MainActivity activity;
+    private Todolist activity;
 
-    public todoadapter(databasehandler db, MainActivity activity){
+    public todoadapter(databasehandler db, Todolist activity){
         this.db = db;
         this.activity = activity;
     }

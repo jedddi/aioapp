@@ -37,9 +37,11 @@ public class databasehandler extends SQLiteOpenHelper {
         //CREATE TABLE
         onCreate(db);
     }
+
     public void openDatabase(){
         db = this.getWritableDatabase();
     }
+
     public void insertTask(todomodel task){
         ContentValues cv = new ContentValues();
         cv.put(TASK, task.getTask());
@@ -56,9 +58,9 @@ public class databasehandler extends SQLiteOpenHelper {
                 if(cur.moveToFirst()){
                     do{
                         todomodel task = new todomodel();
-                        task.setId(cur.getInt(cur.getColumnIndex(ID)));
-                        task.setTask(cur.getString(cur.getColumnIndex(TASK)));
-                        task.setStatus(cur.getInt(cur.getColumnIndex(STATUS)));
+                        task.setId(cur.getInt(cur.getColumnIndexOrThrow(ID)));
+                        task.setTask(cur.getString(cur.getColumnIndexOrThrow(TASK)));
+                        task.setStatus(cur.getInt(cur.getColumnIndexOrThrow(STATUS)));
                         taskList.add(task);
                     }while(cur.moveToNext());
                 }

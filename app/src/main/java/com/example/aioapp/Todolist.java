@@ -1,9 +1,13 @@
 package com.example.aioapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -12,15 +16,32 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
+import com.example.aioapp.Adapter.todoadapter;
+import com.example.aioapp.Model.todomodel;
+import com.example.aioapp.utils.databasehandler;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.Calendar;
+import java.util.List;
 
 import devs.mulham.horizontalcalendar.HorizontalCalendar;
 import devs.mulham.horizontalcalendar.utils.HorizontalCalendarListener;
 
-public class Todolist extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Objects;
+
+import com.example.aioapp.Adapter.todoadapter;
+import com.example.aioapp.Model.todomodel;
+import com.example.aioapp.utils.databasehandler;
+
+public class Todolist extends AppCompatActivity implements DialogCloseListener{
 
 
 
@@ -28,6 +49,12 @@ public class Todolist extends AppCompatActivity {
     private Button add_list_button1;
     private BottomSheetDialog add_list_bottomsheet;
     private Button backButton;
+
+    private ImageView imageView;
+    private todoadapter taskAdapter;
+    private List<todomodel> taskList;
+    private databasehandler db;
+    private RecyclerView tasksRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +111,33 @@ public class Todolist extends AppCompatActivity {
                 //do something
             }
         });
+
+        //For adding and Deleting task
+        //kani nalang ang kulang if mu work nani goods na
+        db = new databasehandler(this);
+        db.openDatabase();
+
+        taskList = new ArrayList<>();
+
+        tasksRecyclerView = findViewById(R.id.taskrecycler);
+        tasksRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        taskAdapter = new todoadapter(db,Todolist.this);
+        tasksRecyclerView.setAdapter(taskAdapter);
+
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new RecyclerItemTouchHelper(taskAdapter));
+        itemTouchHelper.attachToRecyclerView(tasksRecyclerView);
+
+        taskList = db.getAllTask();
+        Collections.reverse(taskList);
+        taskAdapter.setTasks(taskList);
     }
 
+    public void handleDialogClose(DialogInterface dialog){
+     taskList = db.getAllTask();
+     Collections.reverse(taskList);
+     taskAdapter.setTasks(taskList);
+     taskAdapter.notifyDataSetChanged();
+
+    }
 
 }
