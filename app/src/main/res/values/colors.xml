@@ -14,4 +14,6 @@
     <color name="about_app">#D95F69</color>
     <color name="max_blue">#30d9ef</color>
     <color name="min_blue">#96e8f3</color>
+    <color name="progress_color">#00FF00</color>
+    <color name="progress_background_color">#CCCCCC</color>
 </resources>
