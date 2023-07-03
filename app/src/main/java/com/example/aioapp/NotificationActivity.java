@@ -2,7 +2,7 @@ package com.example.aioapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
+import android.annotation.SuppressLint;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.pm.PackageManager;
@@ -10,18 +10,18 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
-
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -31,7 +31,7 @@ public class NotificationActivity extends AppCompatActivity {
     private static final int NOTIFICATION_ID = 1;
     private Button showNotificationButton;
 
-
+    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,13 +41,14 @@ public class NotificationActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent back_Dashboard = new Intent(NotificationActivity.this, Dashboard_activity.class);
-                startActivity(back_Dashboard);
+                Intent backDashboard = new Intent(NotificationActivity.this, Dashboard_activity.class);
+                startActivity(backDashboard);
             }
         });
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
+        bottomNavigationView.setItemIconTintList(ContextCompat.getColorStateList(this, R.drawable.icon_tint_selector));
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()) {
@@ -58,7 +59,6 @@ public class NotificationActivity extends AppCompatActivity {
                         return true;
                     case R.id.notification:
                         // Handle notification item click
-
                         return true;
                     case R.id.settings:
                         // Handle settings item click

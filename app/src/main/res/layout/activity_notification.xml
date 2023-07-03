@@ -72,7 +72,7 @@
         android:src="@drawable/click"
         app:menu="@menu/bottom_nav_menu"
         app:itemTextColor="@drawable/icon_tint_selector"
-        app:itemIconTint="@drawable/icon_tint_selector"/>
+        app:itemIconTint="@drawable/icon_tint_selector" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
