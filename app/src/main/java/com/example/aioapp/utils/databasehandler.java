@@ -22,7 +22,7 @@ public class databasehandler extends SQLiteOpenHelper {
     private static final String CREATE_TODO_TABLE = "CREATE TABLE " + TODO_TABLE + "(" + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                                               + TASK + "TEXT, " + STATUS + "INTEGER)";
     private SQLiteDatabase db;
-    private databasehandler(Context context){
+    public databasehandler(Context context){
         super(context, NAME, null, VERSION);
     }
 

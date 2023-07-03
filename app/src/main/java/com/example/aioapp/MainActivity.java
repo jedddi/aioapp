@@ -1,6 +1,7 @@
 package com.example.aioapp;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
@@ -18,20 +19,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aioapp.Adapter.todoadapter;
 import com.example.aioapp.Model.todomodel;
+import com.example.aioapp.utils.databasehandler;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private ImageView imageView;
+    private todoadapter taskAdapter;
+    private List<todomodel> taskList;
+    private databasehandler db;
+    private RecyclerView tasksRecyclerView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
 
 
         // Create the scale up animation
@@ -69,11 +74,39 @@ public class MainActivity extends AppCompatActivity {
 
         Button button = findViewById(R.id.button);
         button.setOnClickListener(v -> openDashboard());
+
+        //For adding and Deleting task
+        //kani nalang ang kulang if mu work nani goods na
+       // db = new databasehandler(this);
+       // db.openDatabase();
+
+        //taskList = new ArrayList<>();
+
+        //tasksRecyclerView = findViewById(R.id.tasksRecyclerView);
+        //tasksRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //taskAdapter = new todoadapter(this);
+        //tasksRecyclerView.setAdapter(taskAdapter);
+        //fab = findViewById(R.id.fab);
+        //ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new RecyclerItemTouchHelper(tasksAdapter));
+        //itemTouchHelper.attachToRecyclerView(tasksRecyclerView);
+
+        //taskList = db.getAllTask();
+        //Collections.reverse(taskList);
+        //taskAdapter.setTasks(taskList);
     }
+    //@Override
+    //public void handleDialogClose(DialogInterface dialog){
+       // taskList = db.getAllTask();
+       // Collections.reverse(taskList);
+       // taskAdapter.setTasks(taskList);
+       // taskAdapter.notifyDataSetChanged();
+
+//}
 
 
     public void openDashboard() {
         Intent intent = new Intent(this, Dashboard_activity.class);
         startActivity(intent);
     }
+
 }
