@@ -75,25 +75,26 @@ public class Todolist extends AppCompatActivity implements DialogCloseListener{
 
 
 // Dialog Code
-        ImageButton add_list_button1=findViewById(R.id.addlistbtn);
-        add_list_button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                add_list_bottomsheet=new BottomSheetDialog(Todolist.this, R.style.bottom_sheet_theme);
-                View sheetview= LayoutInflater.from(getApplicationContext()).inflate(R.layout.add_list_bottomsheet, null);
+//        ImageButton add_list_button1=findViewById(R.id.addlistbtn);
+//        add_list_button1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                add_list_bottomsheet=new BottomSheetDialog(Todolist.this, R.style.bottom_sheet_theme);
+//                View sheetview= LayoutInflater.from(getApplicationContext()).inflate(R.layout.add_list_bottomsheet, null);
+//
+//                sheetview.findViewById(R.id.cancel_button).setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        add_list_bottomsheet.dismiss();
+//                    }
+//                });
+//
+//                add_list_bottomsheet.setContentView(sheetview);
+//                add_list_bottomsheet.show();
+//
+//            }
+//        });
 
-                sheetview.findViewById(R.id.cancel_button).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        add_list_bottomsheet.dismiss();
-                    }
-                });
-
-                add_list_bottomsheet.setContentView(sheetview);
-                add_list_bottomsheet.show();
-
-            }
-        });
 //Calendar Code
         /* starts before 1 month from now */
         Calendar startDate = Calendar.getInstance();
@@ -131,19 +132,17 @@ public class Todolist extends AppCompatActivity implements DialogCloseListener{
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new RecyclerItemTouchHelper(taskAdapter));
         itemTouchHelper.attachToRecyclerView(tasksRecyclerView);
 
-        //fab = findViewById(R.id.add_task_button);
-
+        fab = findViewById(R.id.addlistbtn);
         taskList = db.getAllTask();
         Collections.reverse(taskList);
         taskAdapter.setTasks(taskList);
 
-
-        //fab.setOnClickListener(new View.OnClickListener(){
-            //@Override
-            //public void onClick(View v){
-                //AddTask.newInstance().show(getSupportFragmentManager(), AddTask.TAG);
-            //}
-        //});
+        fab.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                AddTask.newInstance().show(getSupportFragmentManager(), AddTask.TAG);
+            }
+        });
     }
      @Override
     public void handleDialogClose(DialogInterface dialog){
