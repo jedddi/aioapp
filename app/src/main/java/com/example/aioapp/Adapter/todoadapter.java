@@ -37,7 +37,6 @@ public class todoadapter<TodoList> extends RecyclerView.Adapter<todoadapter.View
         return new ViewHolder(itemView);
     }
     public void onBindViewHolder(ViewHolder holder, int position){
-        db.openDatabase();
         final todomodel item = todoList.get(position);
         holder.task.setText(item.getTask());
         holder.task.setChecked(toBoolean(item.getStatus()));
@@ -53,19 +52,15 @@ public class todoadapter<TodoList> extends RecyclerView.Adapter<todoadapter.View
             }
         });
     }
-    public int getItemCount(){
-        return todoList.size();
-    }
     private boolean toBoolean(int n){
         return n!=0;
     }
+    public Context getContext(){ return activity; }
 
     public void setTasks(List<todomodel> todoList) {
         this.todoList = todoList;
         notifyDataSetChanged();
     }
-
-    public Context getContext(){ return activity; }
 
     public void deleteItem(int position){
         todomodel item = todoList.get(position);
@@ -86,6 +81,8 @@ public class todoadapter<TodoList> extends RecyclerView.Adapter<todoadapter.View
         fragment.show(activity.getSupportFragmentManager(), fragment.getTag());
 
     }
+    @Override
+    public int getItemCount(){ return todoList.size(); }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         CheckBox task;

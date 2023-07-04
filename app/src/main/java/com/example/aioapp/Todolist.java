@@ -120,32 +120,27 @@ public class Todolist extends AppCompatActivity implements DialogCloseListener{
         //kani nalang ang kulang if mu work nani goods na
 
         db = new databasehandler(Todolist.this);
-        db.openDatabase();
-
         taskList = new ArrayList<>();
-
         tasksRecyclerView = findViewById(R.id.taskrecycler);
+        fab = findViewById(R.id.addlistbtn);
+        taskAdapter = new todoadapter(db,Todolist.this);
+
         tasksRecyclerView.setHasFixedSize(true);
         tasksRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        taskAdapter = new todoadapter(db,Todolist.this);
         tasksRecyclerView.setAdapter(taskAdapter);
 
-        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new RecyclerItemTouchHelper(taskAdapter));
-        itemTouchHelper.attachToRecyclerView(tasksRecyclerView);
-
-        fab = findViewById(R.id.addlistbtn);
         taskList = db.getAllTask();
         Collections.reverse(taskList);
         taskAdapter.setTasks(taskList);
 
-        todomodel task = new todomodel();
-        task.setTask("Test Task");
-        task.setStatus(0);
-        task.setId(1);
-
-        taskList.add(task);
-        taskList.add(task);
-        taskList.add(task);
+//        todomodel task = new todomodel();
+//        task.setTask("Test Task");
+//        task.setStatus(0);
+//        task.setId(1);
+//
+//        taskList.add(task);
+//        taskList.add(task);
+//        taskList.add(task);
 
         fab.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -153,6 +148,8 @@ public class Todolist extends AppCompatActivity implements DialogCloseListener{
                 AddTask.newInstance().show(getSupportFragmentManager(), AddTask.TAG);
             }
         });
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new RecyclerItemTouchHelper(taskAdapter));
+        itemTouchHelper.attachToRecyclerView(tasksRecyclerView);
     }
      @Override
     public void handleDialogClose(DialogInterface dialog){

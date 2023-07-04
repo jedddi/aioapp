@@ -56,7 +56,6 @@ public class AddTask extends BottomSheetDialogFragment {
         newTaskSaveButton = getView().findViewById(R.id.add_task_button);
 
         db = new databasehandler(getActivity());
-        db.openDatabase();
 
         boolean isUpdate = false;
 
@@ -122,12 +121,12 @@ public class AddTask extends BottomSheetDialogFragment {
             }
             @Override
     public void onDismiss(DialogInterface dialog){
+        super.onDismiss(dialog);
         Activity activity = getActivity();
         if(activity instanceof DialogCloseListener){
             ((DialogCloseListener)activity).handleDialogClose(dialog);
         }
             }
-
 
 }
 
