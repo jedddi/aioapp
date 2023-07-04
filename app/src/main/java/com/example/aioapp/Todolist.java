@@ -119,12 +119,13 @@ public class Todolist extends AppCompatActivity implements DialogCloseListener{
         //For adding and Deleting task
         //kani nalang ang kulang if mu work nani goods na
 
-        db = new databasehandler(this);
+        db = new databasehandler(Todolist.this);
         db.openDatabase();
 
         taskList = new ArrayList<>();
 
         tasksRecyclerView = findViewById(R.id.taskrecycler);
+        tasksRecyclerView.setHasFixedSize(true);
         tasksRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         taskAdapter = new todoadapter(db,Todolist.this);
         tasksRecyclerView.setAdapter(taskAdapter);
@@ -136,6 +137,15 @@ public class Todolist extends AppCompatActivity implements DialogCloseListener{
         taskList = db.getAllTask();
         Collections.reverse(taskList);
         taskAdapter.setTasks(taskList);
+
+        todomodel task = new todomodel();
+        task.setTask("Test Task");
+        task.setStatus(0);
+        task.setId(1);
+
+        taskList.add(task);
+        taskList.add(task);
+        taskList.add(task);
 
         fab.setOnClickListener(new View.OnClickListener(){
             @Override

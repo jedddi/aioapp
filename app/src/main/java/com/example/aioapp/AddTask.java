@@ -15,11 +15,14 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 
 import com.example.aioapp.Model.todomodel;
 import com.example.aioapp.utils.databasehandler;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
 
@@ -39,7 +42,7 @@ public class AddTask extends BottomSheetDialogFragment {
         super.onCreate(savedInstanceState);
         setStyle(STYLE_NORMAL, R.style.DialogStyle);
     }
-
+    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.add_list_bottomsheet, container, false);
@@ -63,7 +66,7 @@ public class AddTask extends BottomSheetDialogFragment {
             String task = bundle.getString("task");
             newTaskText.setText(task);
             if (task.length() > 0) {
-                newTaskSaveButton.setTextColor(ContextCompat.getColor(getContext(), R.color.black));
+                newTaskSaveButton.setEnabled(false);
             }
         }
             newTaskText.addTextChangedListener(new TextWatcher() {
@@ -90,7 +93,7 @@ public class AddTask extends BottomSheetDialogFragment {
                 }
             });
 
-        boolean finalIsUpdate = isUpdate;
+        final boolean finalIsUpdate = isUpdate;
         newTaskSaveButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -99,9 +102,10 @@ public class AddTask extends BottomSheetDialogFragment {
                         db.updateTask(bundle.getInt("id"), text);
                     }
                     else{
-                        todomodel task = new todomodel();
-                        task.setTask(text);
-                        task.setStatus(0);
+                        todomodel item = new todomodel();
+                        item.setTask(text);
+                        item.setStatus(0);
+                        db.insertTask(item);
                     }
                     dismiss();
                 }
@@ -123,6 +127,8 @@ public class AddTask extends BottomSheetDialogFragment {
             ((DialogCloseListener)activity).handleDialogClose(dialog);
         }
             }
-        }
+
+
+}
 
 

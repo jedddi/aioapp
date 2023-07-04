@@ -38,7 +38,7 @@ public class todoadapter<TodoList> extends RecyclerView.Adapter<todoadapter.View
     }
     public void onBindViewHolder(ViewHolder holder, int position){
         db.openDatabase();
-        todomodel item = todoList.get(position);
+        final todomodel item = todoList.get(position);
         holder.task.setText(item.getTask());
         holder.task.setChecked(toBoolean(item.getStatus()));
         holder.task.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -80,9 +80,11 @@ public class todoadapter<TodoList> extends RecyclerView.Adapter<todoadapter.View
         Bundle bundle = new Bundle();
         bundle.putInt("id",item.getId());
         bundle.putString("task",item.getTask());
+
         AddTask fragment = new AddTask();
         fragment.setArguments(bundle);
-        fragment.show(activity.getSupportFragmentManager(), AddTask.TAG);
+        fragment.show(activity.getSupportFragmentManager(), fragment.getTag());
+
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
