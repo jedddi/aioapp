@@ -13,7 +13,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="#cccccc"
+        android:background="#D9D9D9"
         android:src="@drawable/click"
         app:menu="@menu/bottom_nav_menu"
         app:itemTextColor="@drawable/icon_tint_selector"
@@ -153,7 +153,9 @@
         app:month_color="#d9d9d9"
         app:selected_day_text_color="#FDFDFD"
         app:selector_color="#60d9d9d9"
-        app:week_name_color="#d9d9d9" />
+        app:week_name_color="#d9d9d9"
+        app:next_icon="@drawable/calendarright"
+        app:previous_icon="@drawable/calendarleft"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

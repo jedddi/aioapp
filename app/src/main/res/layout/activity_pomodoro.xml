@@ -58,7 +58,7 @@
 
     <EditText
         android:id="@+id/minutesEditText"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:background="#50FFFFFF"
         android:fontFamily="@font/bebas"
