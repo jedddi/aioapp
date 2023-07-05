@@ -27,31 +27,6 @@
         app:layout_constraintVertical_bias="0.35000002"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="145dp"
-        android:background="#50FFFFFF"
-        android:fontFamily="@font/carterone"
-        android:justificationMode="inter_word"
-        android:lineSpacingExtra="2dp"
-        android:padding="12dp"
-        android:paddingTop="15dp"
-        android:paddingEnd="10dp"
-        android:paddingRight="10dp"
-        android:textStyle="italic"
-        android:gravity="center_horizontal"
-        android:text="Embrace the profound power that dwells within your core, as it possesses an unwavering determination that transcends adversity, illuminating a path towards your dreams. -Cyber 6-"
-        android:textAlignment="center"
-        android:textColor="#1d1d1d"
-        android:textSize="14dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.32"
-        tools:ignore="TextSizeCheck" />
-
     <ImageButton
         android:id="@+id/back_button"
         android:layout_width="90dp"
@@ -70,8 +45,9 @@
         android:id="@+id/clockTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="00:00"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/unicaone"
+        android:text="00:00"
         android:textColor="#fff"
         android:textSize="100sp"
         android:textStyle="bold"
@@ -96,22 +72,23 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/clockTextView"
-        app:layout_constraintVertical_bias="0.42000002" />
+        app:layout_constraintVertical_bias="0.606" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:background="@drawable/click"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/click"
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintHorizontal_bias="0.761"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/clockTextView"
-        app:layout_constraintVertical_bias="0.74">
+        app:layout_constraintVertical_bias="0.831">
 
 
         <Button
@@ -119,8 +96,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:clickable="true"
             android:background="@drawable/button_selector"
+            android:clickable="true"
             android:fontFamily="@font/bebas"
             android:text=" DEFAULT"
             android:textColor="#FFFFFF"
@@ -131,8 +108,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:clickable="true"
             android:background="@drawable/button_selector"
+            android:clickable="true"
             android:fontFamily="@font/bebas"
             android:text="BREAK"
             android:textColor="#FFFFFF"
@@ -146,17 +123,18 @@
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clockTextView">
+        app:layout_constraintTop_toBottomOf="@+id/clockTextView"
+        app:layout_constraintVertical_bias="0.47">
 
         <Button
             android:id="@+id/startButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:clickable="true"
             android:background="@drawable/button_selector"
+            android:clickable="true"
             android:fontFamily="@font/bebas"
             android:src="@drawable/click2"
             android:text="Start"
@@ -168,8 +146,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:clickable="true"
             android:background="@drawable/button_selector"
+            android:clickable="true"
             android:enabled="false"
             android:fontFamily="@font/bebas"
             android:src="@drawable/click2"
@@ -180,10 +158,10 @@
         <Button
             android:id="@+id/stopButton"
             android:layout_width="wrap_content"
-            android:clickable="true"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:background="@drawable/button_selector"
+            android:clickable="true"
             android:enabled="false"
             android:fontFamily="@font/bebas"
             android:src="@drawable/click2"
