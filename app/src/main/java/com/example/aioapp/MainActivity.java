@@ -32,16 +32,11 @@ public class MainActivity extends AppCompatActivity {
     private databasehandler db;
     private RecyclerView tasksRecyclerView;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        // Create the scale up animation
         ObjectAnimator scaleUpX = ObjectAnimator.ofFloat(imageView, "scaleX", 1f, 1.2f);
         scaleUpX.setDuration(5000);
         scaleUpX.setInterpolator(new AccelerateDecelerateInterpolator());
@@ -54,18 +49,15 @@ public class MainActivity extends AppCompatActivity {
         scaleUpY.setRepeatCount(ObjectAnimator.INFINITE);
         scaleUpY.setRepeatMode(ObjectAnimator.REVERSE);
 
-        // Create the fade in animation
         ObjectAnimator fadeIn = ObjectAnimator.ofFloat(imageView, "alpha", 0f, 1f);
         fadeIn.setDuration(5000);
         fadeIn.setInterpolator(new AccelerateDecelerateInterpolator());
         fadeIn.setRepeatCount(ObjectAnimator.INFINITE);
         fadeIn.setRepeatMode(ObjectAnimator.REVERSE);
 
-        // Combine the scale up and fade in animations into a set
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playTogether(scaleUpX, scaleUpY, fadeIn);
 
-        // Start the animation
         animatorSet.start();
 
         ConstraintLayout constraintLayout = findViewById(R.id.relativeLayout);

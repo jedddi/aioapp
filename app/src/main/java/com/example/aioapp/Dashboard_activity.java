@@ -33,7 +33,6 @@ public class Dashboard_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard_activity);
 
-//Tools Button Code
         ImageButton todo_btn = findViewById(R.id.todolist_btn);
         todo_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,15 +73,12 @@ public class Dashboard_activity extends AppCompatActivity {
                 switch (item.getItemId()) {
 
                     case R.id.home:
-                        // Handle home item click
                         return true;
                     case R.id.notification:
-                        // Handle notification item click
                         startActivity(new Intent(getApplicationContext(),NotificationActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.settings:
-                        // Handle settings item click
                         startActivity(new Intent(getApplicationContext(),Settings.class));
                         overridePendingTransition(0,0);
                         return true;

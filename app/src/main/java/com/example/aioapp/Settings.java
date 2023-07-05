@@ -34,17 +34,14 @@ public class Settings extends AppCompatActivity {
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.home:
-                        // Handle home item click
                         startActivity(new Intent(getApplicationContext(), Dashboard_activity.class));
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.notification:
-                        // Handle notification item click
                         startActivity(new Intent(getApplicationContext(), NotificationActivity.class));
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.settings:
-                        // Handle settings item click
                         return true;
                 }
                 return false;
