@@ -34,6 +34,9 @@ public class Pomodoro extends AppCompatActivity {
     private long timeLeftInMillis;
     private boolean isTimerRunning;
     private long pausedTimeInMillis;
+
+    private boolean defaultButtonClicked = false;
+
     private MediaPlayer mediaPlayer;
     private ImageView imageView;
     private Button backButton;
@@ -55,7 +58,6 @@ public class Pomodoro extends AppCompatActivity {
         });
 
         imageView = findViewById(R.id.imageView);
-
 
         ObjectAnimator scaleUpX = ObjectAnimator.ofFloat(imageView, "scaleX", 1f, 1.2f);
         scaleUpX.setDuration(5000);
@@ -124,6 +126,8 @@ public class Pomodoro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 setDefaultTimer(25);
+                startButton.setEnabled(true);
+                defaultButtonClicked = true;
                 startBreakAutomatically = true;
                 startTimer();
             }
@@ -175,9 +179,9 @@ public class Pomodoro extends AppCompatActivity {
                 updateButtonState();
                 playEndSound();
 
-                if (startBreakAutomatically) {
+                if (startBreakAutomatically && defaultButtonClicked) {
                     startBreakAutomatically = false; // Reset the flag
-                    startTimer();
+                    startTimerWithBreak(); // Start the break timer automatically
                 }
             }
         }.start();
@@ -229,9 +233,9 @@ public class Pomodoro extends AppCompatActivity {
                 updateButtonState();
                 playEndSound();
 
-                if (startBreakAutomatically) {
+                if (startBreakAutomatically && defaultButtonClicked) {
                     startBreakAutomatically = false; // Reset the flag
-                    startTimer();
+                    startTimerWithBreak(); // Start the break timer automatically
                 }
             }
         }.start();
@@ -239,6 +243,12 @@ public class Pomodoro extends AppCompatActivity {
         isTimerRunning = true;
         updateButtonState();
     }
+
+    private void startTimerWithBreak() {
+        setDefaultTimer(5); // Set break time to 5 minutes (modify as needed)
+        startTimer();
+    }
+
 
     private void updateClockText() {
         int minutes = (int) (timeLeftInMillis / 1000) / 60;
