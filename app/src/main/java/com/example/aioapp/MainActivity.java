@@ -3,6 +3,7 @@ package com.example.aioapp;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,6 +13,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -40,6 +43,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
+        String firstopen = pref.getString("firstopen", "");
+
+        if(firstopen.equals("Yes")){
+            startActivity(new Intent(MainActivity.this, Dashboard_activity.class));
+        } else {
+            SharedPreferences.Editor editor = pref.edit();
+            editor.putString("firstopen", "Yes");
+            editor.apply();
+        }
 
         // Create the scale up animation
         ObjectAnimator scaleUpX = ObjectAnimator.ofFloat(imageView, "scaleX", 1f, 1.2f);
