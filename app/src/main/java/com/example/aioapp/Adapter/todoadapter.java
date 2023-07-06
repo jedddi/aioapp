@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,7 +18,24 @@ import com.example.aioapp.R;
 import com.example.aioapp.Todolist;
 import com.example.aioapp.utils.databasehandler;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeParseException;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.time.format.FormatStyle;
+import java.time.temporal.ChronoField;
+import java.util.Locale;
 
 public class todoadapter<TodoList> extends RecyclerView.Adapter<todoadapter.ViewHolder> {
 
@@ -51,6 +69,21 @@ public class todoadapter<TodoList> extends RecyclerView.Adapter<todoadapter.View
                 }
             }
         });
+        // Parse the date string to a LocalDate object
+        LocalDate date;
+        try {
+            date = LocalDate.parse(item.getDate(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        } catch (DateTimeParseException e) {
+            e.printStackTrace();
+            holder.dateTextView.setText(item.getDate());
+            return;
+        }
+
+        // Format the LocalDate object into the desired output format
+        DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("MMMM d, yyyy");
+        String formattedDate = date.format(outputFormatter);
+
+        holder.dateTextView.setText(formattedDate);
     }
     private boolean toBoolean(int n){
         return n!=0;
@@ -86,9 +119,11 @@ public class todoadapter<TodoList> extends RecyclerView.Adapter<todoadapter.View
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         CheckBox task;
+        TextView dateTextView;
         ViewHolder(View view){
             super(view);
             task = view.findViewById(R.id.todoCheckBox);
+            dateTextView = view.findViewById(R.id.dateTextView);
         }
     }
 }

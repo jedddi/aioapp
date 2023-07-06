@@ -22,7 +22,19 @@
             android:layout_centerHorizontal="true"
             android:paddingStart="8dp"
             android:buttonTint="#4A4A4A"
-            tools:text="Sample Task"/>
+            tools:text="Sample Task"
+            android:layout_alignParentStart="true"/>
+
+        <TextView
+            android:id="@+id/dateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="28dp"
+            android:padding="8dp"
+            android:textColor="#000"
+            android:textSize="13sp"
+            />
 
     </RelativeLayout>
 

@@ -21,6 +21,8 @@ public class databasehandler extends SQLiteOpenHelper {
     private static final String ID = "ID";
     private static final String TASK = "TASK";
     private static final String STATUS = "STATUS";
+    private static final String DATE = "DATE";
+
 //    private static final String CREATE_TODO_TABLE = "CREATE TABLE " + TODO_TABLE + "(" + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
 //                                              + TASK + "TEXT, " + STATUS + "INTEGER)";
     private SQLiteDatabase db;
@@ -30,7 +32,7 @@ public class databasehandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db){
-        db.execSQL("CREATE TABLE IF NOT EXISTS todo (ID INTEGER PRIMARY KEY AUTOINCREMENT , TASK TEXT , STATUS INTEGER)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS todo (ID INTEGER PRIMARY KEY AUTOINCREMENT , TASK TEXT , STATUS INTEGER, DATE TEXT)");
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
@@ -44,6 +46,7 @@ public class databasehandler extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
         cv.put(TASK, task.getTask());
         cv.put(STATUS, 0);
+        cv.put(DATE,task.getDate());
         db.insert(TODO_TABLE, null, cv);
     }
     public void updateStatus(int id, int status){
@@ -52,10 +55,11 @@ public class databasehandler extends SQLiteOpenHelper {
         cv.put(STATUS, status);
         db.update(TODO_TABLE, cv, "ID=?", new String[] {String.valueOf(id)});
     }
-    public void updateTask(int id, String task){
+    public void updateTask(int id, String task, String date){
         db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(TASK, task);
+        cv.put(DATE, date);
         db.update(TODO_TABLE, cv, "ID=?", new String[] {String.valueOf(id)});
     }
     public void deleteTask(int id){
@@ -78,6 +82,7 @@ public class databasehandler extends SQLiteOpenHelper {
                         task.setId(cur.getInt(cur.getColumnIndex(ID)));
                         task.setTask(cur.getString(cur.getColumnIndex(TASK)));
                         task.setStatus(cur.getInt(cur.getColumnIndex(STATUS)));
+                        task.setDate(cur.getString(cur.getColumnIndex(DATE)));
                         taskList.add(task);
                     }while(cur.moveToNext());
                 }

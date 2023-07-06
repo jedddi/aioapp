@@ -1,6 +1,7 @@
 package com.example.aioapp;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -24,11 +26,15 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import org.jetbrains.annotations.Nullable;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
 import java.util.Objects;
 
 public class AddTask extends BottomSheetDialogFragment {
     public static  final String TAG = "ActionBottomDialog";
     private EditText newTaskText;
+    private EditText dateEditText;
     private Button newTaskSaveButton;
     private databasehandler db;
     private Button cancelDialog;
@@ -54,6 +60,7 @@ public class AddTask extends BottomSheetDialogFragment {
         super.onViewCreated(view, savedInstanceState);
         newTaskText = getView().findViewById(R.id.task_name);
         newTaskSaveButton = getView().findViewById(R.id.add_task_button);
+        dateEditText = getView().findViewById(R.id.dateEditText);
 
         db = new databasehandler(getActivity());
 
@@ -92,18 +99,21 @@ public class AddTask extends BottomSheetDialogFragment {
                 }
             });
 
+
         final boolean finalIsUpdate = isUpdate;
         newTaskSaveButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     String text = newTaskText.getText().toString();
+                    String date = dateEditText.getText().toString();
                     if(finalIsUpdate){
-                        db.updateTask(bundle.getInt("id"), text);
+                        db.updateTask(bundle.getInt("id"), text, date);
                     }
                     else{
                         todomodel item = new todomodel();
                         item.setTask(text);
                         item.setStatus(0);
+                        item.setDate(date);
                         db.insertTask(item);
                     }
                     dismiss();
@@ -118,6 +128,14 @@ public class AddTask extends BottomSheetDialogFragment {
             }
         });
 
+        dateEditText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePicker();
+            }
+        });
+
+
             }
             @Override
     public void onDismiss(DialogInterface dialog){
@@ -127,6 +145,35 @@ public class AddTask extends BottomSheetDialogFragment {
             ((DialogCloseListener)activity).handleDialogClose(dialog);
         }
             }
+
+    private void showDatePicker() {
+        final Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(
+                requireContext(),
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        // Create a Calendar instance and set the selected date values
+                        Calendar selectedDate = Calendar.getInstance();
+                        selectedDate.set(year, month, dayOfMonth);
+
+                        // Format the selected date into the desired output format
+                        SimpleDateFormat outputFormat = new SimpleDateFormat("MMMM dd, yyyy", Locale.getDefault());
+                        String formattedDate = outputFormat.format(selectedDate.getTime());
+
+                        // Update the dateEditText with the formatted date
+                        dateEditText.setText(formattedDate);
+                    }
+                },
+                year, month, dayOfMonth
+        );
+
+        datePickerDialog.show();
+    }
 
 }
 
