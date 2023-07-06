@@ -180,8 +180,8 @@ public class Pomodoro extends AppCompatActivity {
                 playEndSound();
 
                 if (startBreakAutomatically && defaultButtonClicked) {
-                    startBreakAutomatically = false; // Reset the flag
-                    startTimerWithBreak(); // Start the break timer automatically
+                    startBreakAutomatically = false; 
+                    startTimerWithBreak();
                 }
             }
         }.start();
@@ -234,8 +234,8 @@ public class Pomodoro extends AppCompatActivity {
                 playEndSound();
 
                 if (startBreakAutomatically && defaultButtonClicked) {
-                    startBreakAutomatically = false; // Reset the flag
-                    startTimerWithBreak(); // Start the break timer automatically
+                    startBreakAutomatically = false;
+                    startTimerWithBreak();
                 }
             }
         }.start();
@@ -245,7 +245,7 @@ public class Pomodoro extends AppCompatActivity {
     }
 
     private void startTimerWithBreak() {
-        setDefaultTimer(5); // Set break time to 5 minutes (modify as needed)
+        setDefaultTimer(5);
         startTimer();
     }
 

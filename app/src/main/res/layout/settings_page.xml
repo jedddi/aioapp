@@ -83,7 +83,6 @@
                 android:orientation="vertical"
                 android:padding="15dp">
 
-                <!-- Send Feedback -->
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -91,11 +90,10 @@
 
                     <ImageView
                         android:id="@+id/messageIcon"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:background="@color/send_feedback"
                         android:clickable="true"
-                        android:contentDescription="@string/Location"
                         android:padding="12dp"
                         android:src="@drawable/message_icon" />
 
@@ -106,11 +104,10 @@
                         android:layout_centerVertical="true"
                         android:layout_marginStart="20dp"
                         android:layout_toEndOf="@+id/messageIcon"
-                        android:clickable="true"
-                        android:minHeight="48dp"
                         android:text="Send Feedback"
                         android:textColor="#fff"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        />
 
                     <ImageButton
                         android:id="@+id/sendFeedbackButton"
@@ -124,9 +121,6 @@
                         app:tint="#fff"
                         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
                 </RelativeLayout>
-
-
-
 
                 <!-- About Us -->
                 <RelativeLayout
@@ -165,7 +159,6 @@
                         tools:ignore="TouchTargetSizeCheck" />
                 </RelativeLayout>
 
-                <!-- About App -->
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
