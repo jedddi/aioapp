@@ -1,10 +1,8 @@
 package com.example.aioapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
@@ -17,6 +15,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.util.Locale;
 
@@ -33,10 +34,15 @@ public class Pomodoro extends AppCompatActivity {
     private long timeLeftInMillis;
     private boolean isTimerRunning;
     private long pausedTimeInMillis;
+
+    private boolean defaultButtonClicked = false;
+
     private MediaPlayer mediaPlayer;
     private ImageView imageView;
     private Button backButton;
+    private boolean startBreakAutomatically = false;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,8 +57,8 @@ public class Pomodoro extends AppCompatActivity {
             }
         });
 
+        imageView = findViewById(R.id.imageView);
 
-        // Create the scale up animation
         ObjectAnimator scaleUpX = ObjectAnimator.ofFloat(imageView, "scaleX", 1f, 1.2f);
         scaleUpX.setDuration(5000);
         scaleUpX.setInterpolator(new AccelerateDecelerateInterpolator());
@@ -65,18 +71,15 @@ public class Pomodoro extends AppCompatActivity {
         scaleUpY.setRepeatCount(ObjectAnimator.INFINITE);
         scaleUpY.setRepeatMode(ObjectAnimator.REVERSE);
 
-        // Create the fade in animation
         ObjectAnimator fadeIn = ObjectAnimator.ofFloat(imageView, "alpha", 0f, 1f);
         fadeIn.setDuration(5000);
         fadeIn.setInterpolator(new AccelerateDecelerateInterpolator());
         fadeIn.setRepeatCount(ObjectAnimator.INFINITE);
         fadeIn.setRepeatMode(ObjectAnimator.REVERSE);
 
-        // Combine the scale up and fade in animations into a set
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playTogether(scaleUpX, scaleUpY, fadeIn);
 
-        // Start the animation
         animatorSet.start();
 
         ConstraintLayout constraintLayout = findViewById(R.id.pomodoro);
@@ -96,6 +99,7 @@ public class Pomodoro extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startBreakAutomatically = false;
                 startTimer();
             }
         });
@@ -122,6 +126,10 @@ public class Pomodoro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 setDefaultTimer(25);
+                startButton.setEnabled(true);
+                defaultButtonClicked = true;
+                startBreakAutomatically = true;
+                startTimer();
             }
         });
 
@@ -149,7 +157,7 @@ public class Pomodoro extends AppCompatActivity {
         }
 
         timeLeftInMillis = millisInput;
-        minutesEditText.setText(""); // Clear the input
+        minutesEditText.setText("");
         startButton.setEnabled(false);
         pauseResumeButton.setEnabled(true);
         pauseResumeButton.setText("Pause");
@@ -170,12 +178,18 @@ public class Pomodoro extends AppCompatActivity {
                 isTimerRunning = false;
                 updateButtonState();
                 playEndSound();
+
+                if (startBreakAutomatically && defaultButtonClicked) {
+                    startBreakAutomatically = false; // Reset the flag
+                    startTimerWithBreak(); // Start the break timer automatically
+                }
             }
         }.start();
 
         isTimerRunning = true;
         updateButtonState();
     }
+
 
     private void pauseTimer() {
         countDownTimer.cancel();
@@ -218,12 +232,23 @@ public class Pomodoro extends AppCompatActivity {
                 isTimerRunning = false;
                 updateButtonState();
                 playEndSound();
+
+                if (startBreakAutomatically && defaultButtonClicked) {
+                    startBreakAutomatically = false; // Reset the flag
+                    startTimerWithBreak(); // Start the break timer automatically
+                }
             }
         }.start();
 
         isTimerRunning = true;
         updateButtonState();
     }
+
+    private void startTimerWithBreak() {
+        setDefaultTimer(5); // Set break time to 5 minutes (modify as needed)
+        startTimer();
+    }
+
 
     private void updateClockText() {
         int minutes = (int) (timeLeftInMillis / 1000) / 60;
@@ -254,7 +279,7 @@ public class Pomodoro extends AppCompatActivity {
     }
 
     private void playEndSound() {
-        mediaPlayer = MediaPlayer.create(this, R.raw.end_sound); // Replace with your sound file
+        mediaPlayer = MediaPlayer.create(this, R.raw.end_sound);
         mediaPlayer.start();
     }
 
