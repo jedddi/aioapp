@@ -14,14 +14,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="144dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:textColorNormal="#fff"
-        app:textColorSelected="#1B1B1B"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
         app:selectedDateBackground="@drawable/selected_box"
         app:selectorColor="#1b1b1b"
-        app:sizeMiddleText="25dp"/>
+        app:sizeMiddleText="25dp"
+        app:textColorNormal="#fff"
+        app:textColorSelected="#1B1B1B" />
 
     <ImageView
         android:id="@+id/imageView2"

@@ -28,6 +28,11 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 
+import java.util.Calendar;
+
+import devs.mulham.horizontalcalendar.HorizontalCalendar;
+import devs.mulham.horizontalcalendar.utils.HorizontalCalendarListener;
+
 public class Todolist extends AppCompatActivity implements DialogCloseListener {
 
     private ImageButton backButton;
@@ -49,6 +54,27 @@ public class Todolist extends AppCompatActivity implements DialogCloseListener {
             public void onClick(View view) {
                 Intent backDashboard = new Intent(Todolist.this, Dashboard_activity.class);
                 startActivity(backDashboard);
+            }
+        });
+
+        //Calendar Code
+        /* starts before 1 month from now */
+        Calendar startDate = Calendar.getInstance();
+        startDate.add(Calendar.MONTH, -1);
+
+        /* ends after 1 month from now */
+        Calendar endDate = Calendar.getInstance();
+        endDate.add(Calendar.MONTH, 1);
+
+        HorizontalCalendar horizontalCalendar = new HorizontalCalendar.Builder(this, R.id.calendarView)
+                .range(startDate, endDate)
+                .datesNumberOnScreen(5)
+                .build();
+
+        horizontalCalendar.setCalendarListener(new HorizontalCalendarListener() {
+            @Override
+            public void onDateSelected(Calendar date, int position) {
+                //do something
             }
         });
 
